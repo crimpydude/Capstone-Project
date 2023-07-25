@@ -76,7 +76,7 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
      [Input(component_id='site_dropdown',component_property='value')]
 )
 def update_graph(site_dropdown):
-    if (site_dropdown == 'All Sites'):
+    if (site_dropdown == 'ALL'):
         df  = spacex_df[spacex_df['class'] == 1]
         fig = px.pie(df, names = 'Launch Site',hole=.3,title = 'Total Success Launches By All Sites')
 
@@ -96,7 +96,7 @@ def update_graph(site_dropdown):
      [Input(component_id='site_dropdown',component_property='value'),Input(component_id="payload_slider", component_property="value")]
 )
 def update_scattergraph(site_dropdown,payload_slider):
-    if site_dropdown == 'All Sites':
+    if site_dropdown == 'ALL':
         low, high = payload_slider
         df  = spacex_df
         mask = (df['Payload Mass (kg)'] > low) & (df['Payload Mass (kg)'] < high)
