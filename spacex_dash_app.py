@@ -76,7 +76,7 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
      [Input(component_id='site_dropdown',component_property='value')]
 )
 def update_graph(site_dropdown):
-    if (site_dropdown == 'ALL'):
+    if (site_dropdown == 'All Sites'):
         df  = spacex_df[spacex_df['class'] == 1]
         fig = px.pie(df, names = 'Launch Site',hole=.3,title = 'Total Success Launches By All Sites')
 
